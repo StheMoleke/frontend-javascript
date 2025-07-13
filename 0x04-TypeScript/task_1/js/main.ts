@@ -1,4 +1,40 @@
-// Define interfaces
+// Interface for constructor
+interface StudentConstructor {
+  firstName: string;
+  lastName: string;
+}
+
+// Interface for the class
+interface StudentClassInterface {
+  workOnHomework(): string;
+  displayName(): string;
+}
+
+// Class implementing both
+class StudentClass implements StudentClassInterface {
+  private firstName: string;
+  private lastName: string;
+
+  constructor({ firstName, lastName }: StudentConstructor) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  workOnHomework(): string {
+    return 'Currently working';
+  }
+
+  displayName(): string {
+    return this.firstName;
+  }
+}
+
+// Example usage
+const student = new StudentClass({ firstName: 'Sthembiso', lastName: 'Moleke' });
+console.log(student.displayName());      // Output: Sthembiso
+console.log(student.workOnHomework());   // Output: Currently working
+// Define 
+interfaces
 interface StudentConstructor {
   new (firstName: string, lastName: string): StudentClass;
 }
