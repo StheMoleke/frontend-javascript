@@ -1,0 +1,2 @@
+type Subjects = 'Math' | 'History';
+

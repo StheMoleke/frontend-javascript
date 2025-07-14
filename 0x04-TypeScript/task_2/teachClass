@@ -1,0 +1,15 @@
+// String literal types
+type Subjects = 'Math' | 'History';
+
+function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  } else {
+    return 'Teaching History';
+  }
+}
+
+// Test cases
+console.log(teachClass('Math'));     // Should log: Teaching Math
+console.log(teachClass('History'));  // Should log: Teaching History
+
